@@ -10,12 +10,11 @@ import com.security.demo.repository.ResetSenhaRepositoryOng;
 import com.security.demo.repository.ResetSenhaRepositoryUser;
 import com.security.demo.repository.UserRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-//import org.springframework.mail.SimpleMailMessage;
-//import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -44,9 +43,8 @@ public class ResetSenhaService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
-    //    @Autowired
-//    private JavaMailSender javaMailSender;
+    @Autowired
+    private JavaMailSender javaMailSender;
 
     @Transactional
     public void solicitarResetSenhaUser(EmailDTO email) {
@@ -60,7 +58,7 @@ public class ResetSenhaService {
             resetSenhaRepositoryUser.save(resetSenhaUser);
 
             logger.info("Seu código: " + resetSenhaUser.getCodigoUser());
-//            enviarEmailResetSenha(user.getEmail(), codigo);
+            enviarEmailResetSenha(user.getEmail(), codigo);
         }
     }
 
@@ -76,7 +74,7 @@ public class ResetSenhaService {
             resetSenhaRepositoryOng.save(resetSenhaOng);
 
             logger.info("Seu código: " + resetSenhaOng.getCodigoOng());
-//            enviarEmailResetSenha(user.getEmail(), codigo);
+            enviarEmailResetSenha(ong.getEmail(), codigo);
         }
     }
 
@@ -100,11 +98,11 @@ public class ResetSenhaService {
         }
     }
 
-//    private void enviarEmailResetSenha(String email, String codigo){
-//        SimpleMailMessage mensagem = new SimpleMailMessage();
-//        mensagem.setTo(email);
-//        mensagem.setSubject("Redefinição de Senha");
-//        mensagem.setText("Seu código de redefinição de senha é: " + codigo);
-//        javaMailSender.send(mensagem);
-//    }
+    public void enviarEmailResetSenha(String email, String codigo){
+        SimpleMailMessage mensagem = new SimpleMailMessage();
+        mensagem.setTo(email);
+        mensagem.setSubject("Redefinição de Senha");
+        mensagem.setText("Seu código de redefinição de senha é: " + codigo);
+        javaMailSender.send(mensagem);
+    }
 }

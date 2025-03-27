@@ -10,10 +10,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reset_senha_orgao")
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 public class ResetSenhaOng {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -29,45 +25,45 @@ public class ResetSenhaOng {
     @Column(name = "data_de_expiracao_orgao")
     private LocalDateTime expirationOng;
 
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-//
-//    public Ong getOng() {
-//        return ong;
-//    }
-//
-//    public void setOng(Ong ong) {
-//        this.ong = ong;
-//    }
-//
-//    public String getCodigoOng() {
-//        return codigoOng;
-//    }
-//
-//    public void setCodigoOng(String codigoOng) {
-//        this.codigoOng = codigoOng;
-//    }
-//
-//    public LocalDateTime getExpirationOng() {
-//        return expirationOng;
-//    }
-//
-//    public void setExpirationOng(LocalDateTime expirationOng) {
-//        this.expirationOng = expirationOng;
-//    }
-//
-//    public ResetSenhaOng(String id, Ong ong, String codigoOng, LocalDateTime expirationOng) {
-//        this.id = id;
-//        this.ong = ong;
-//        this.codigoOng = codigoOng;
-//        this.expirationOng = expirationOng;
-//    }
-//
-//    public ResetSenhaOng() {
-//    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Ong getOng() {
+        return ong;
+    }
+
+    public void setOng(Ong ong) {
+        this.ong = ong;
+    }
+
+    public String getCodigoOng() {
+        return codigoOng;
+    }
+
+    public void setCodigoOng(String codigoOng) {
+        this.codigoOng = codigoOng;
+    }
+
+    public LocalDateTime getExpirationOng() {
+        return expirationOng;
+    }
+
+    public void setExpirationOng(LocalDateTime expirationOng) {
+        this.expirationOng = expirationOng;
+    }
+
+    public ResetSenhaOng(String id, Ong ong, String codigoOng, LocalDateTime expirationOng) {
+        this.id = id;
+        this.ong = ong;
+        this.codigoOng = codigoOng;
+        this.expirationOng = expirationOng;
+    }
+
+    public ResetSenhaOng() {
+    }
 }
