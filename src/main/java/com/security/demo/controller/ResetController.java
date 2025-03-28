@@ -1,10 +1,8 @@
 package com.security.demo.controller;
 
 import com.security.demo.model.dto.EmailDTO;
-import com.security.demo.model.dto.ResetRequestDTO;
 import com.security.demo.model.dto.ResetSenhaDTO;
 import com.security.demo.service.ResetSenhaService;
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

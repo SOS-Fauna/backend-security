@@ -23,10 +23,10 @@ import java.util.UUID;
 
 @Service
 public class ResetSenhaService {
-
-    private static final Logger logger = LoggerFactory.getLogger(ResetSenhaService.class);
-
-    private static final Logger log = LoggerFactory.getLogger(ResetSenhaService.class);
+//
+//    private static final Logger logger = LoggerFactory.getLogger(ResetSenhaService.class);
+//
+//    private static final Logger log = LoggerFactory.getLogger(ResetSenhaService.class);
 
     @Autowired
     private UserRepository userRepository;
@@ -50,14 +50,14 @@ public class ResetSenhaService {
     public void solicitarResetSenhaUser(EmailDTO email) {
         User user = userRepository.findByEmail(email.getEmail()).orElse(null);
         if (user != null) {
-            String codigo = UUID.randomUUID().toString();
+            String codigo = UUID.randomUUID().toString().substring(0, 6);
             ResetSenhaUser resetSenhaUser = new ResetSenhaUser();
             resetSenhaUser.setUser(user);
             resetSenhaUser.setCodigoUser(codigo);
             resetSenhaUser.setExpirationUser(LocalDateTime.now().plusHours(1));
             resetSenhaRepositoryUser.save(resetSenhaUser);
 
-            logger.info("Seu código: " + resetSenhaUser.getCodigoUser());
+//            logger.info("Seu código: " + resetSenhaUser.getCodigoUser());
             enviarEmailResetSenha(user.getEmail(), codigo);
         }
     }
@@ -66,14 +66,14 @@ public class ResetSenhaService {
     public void solicitarResetSenhaOng(EmailDTO email) {
         Ong ong = ongRepository.findByEmail(email.getEmail()).orElse(null);
         if (ong != null) {
-            String codigo = UUID.randomUUID().toString();
+            String codigo = UUID.randomUUID().toString().substring(0, 6);
             ResetSenhaOng resetSenhaOng = new ResetSenhaOng();
             resetSenhaOng.setOng(ong);
             resetSenhaOng.setCodigoOng(codigo);
             resetSenhaOng.setExpirationOng(LocalDateTime.now().plusHours(1));
             resetSenhaRepositoryOng.save(resetSenhaOng);
 
-            logger.info("Seu código: " + resetSenhaOng.getCodigoOng());
+//            logger.info("Seu código: " + resetSenhaOng.getCodigoOng());
             enviarEmailResetSenha(ong.getEmail(), codigo);
         }
     }
