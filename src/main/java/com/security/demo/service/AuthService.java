@@ -39,14 +39,4 @@ public class AuthService {
         }
         return "Invalid credentials";
     }
-
-    public void registerUser(String email, String senha) {
-        User user = new User(null, email, passwordEncoder.encode(senha));
-        userRepository.save(user);
-    }
-
-    public void registerOng(String email, String senha) {
-        Ong ong = new Ong(null, email, passwordEncoder.encode(senha));
-        ongRepository.save(ong);
-    }
 }
