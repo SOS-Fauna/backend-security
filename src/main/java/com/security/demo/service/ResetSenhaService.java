@@ -50,8 +50,6 @@ public class ResetSenhaService {
             resetSenhaUser.setCodigoUser(codigo);
             resetSenhaUser.setExpirationUser(LocalDateTime.now().plusHours(1));
             resetSenhaRepositoryUser.save(resetSenhaUser);
-
-//            logger.info("Seu código: " + resetSenhaUser.getCodigoUser());
             enviarEmailResetSenha(user.getEmail(), codigo);
         }
     }
@@ -66,8 +64,6 @@ public class ResetSenhaService {
             resetSenhaOng.setCodigoOng(codigo);
             resetSenhaOng.setExpirationOng(LocalDateTime.now().plusHours(1));
             resetSenhaRepositoryOng.save(resetSenhaOng);
-
-//            logger.info("Seu código: " + resetSenhaOng.getCodigoOng());
             enviarEmailResetSenha(ong.getEmail(), codigo);
         }
     }
