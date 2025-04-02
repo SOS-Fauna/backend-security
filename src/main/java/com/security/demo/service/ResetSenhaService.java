@@ -1,6 +1,5 @@
 package com.security.demo.service;
 
-import com.security.demo.model.dto.EmailDTO;
 import com.security.demo.model.entity.Ong;
 import com.security.demo.model.entity.ResetSenhaOng;
 import com.security.demo.model.entity.ResetSenhaUser;
@@ -9,11 +8,6 @@ import com.security.demo.repository.OngRepository;
 import com.security.demo.repository.ResetSenhaRepositoryOng;
 import com.security.demo.repository.ResetSenhaRepositoryUser;
 import com.security.demo.repository.UserRepository;
-import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
