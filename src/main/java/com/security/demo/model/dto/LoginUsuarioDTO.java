@@ -1,6 +1,7 @@
 package com.security.demo.model.dto;
 
 public class LoginUsuarioDTO {
+
     private String email;
     private String senha;
 
