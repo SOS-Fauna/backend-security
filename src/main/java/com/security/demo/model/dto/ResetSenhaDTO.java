@@ -1,8 +1,5 @@
 package com.security.demo.model.dto;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public class ResetSenhaDTO {
 
     private String codigo;

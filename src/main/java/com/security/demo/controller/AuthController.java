@@ -3,20 +3,15 @@ package com.security.demo.controller;
 import com.security.demo.model.dto.*;
 import com.security.demo.service.AuthService;
 import com.security.demo.service.RegisterService;
-import com.security.demo.service.ResetSenhaService;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@AllArgsConstructor
 public class AuthController {
 
     @Autowired
     private AuthService authService;
-
     @Autowired
     private RegisterService registerService;
 
@@ -41,6 +36,4 @@ public class AuthController {
     public String loginOng(@RequestBody LoginOrgaoDTO body) {
         return authService.authenticateOng(body.getEmail(), body.getSenha());
     }
-
-
 }

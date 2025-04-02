@@ -1,8 +1,5 @@
 package com.security.demo.model.dto;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public class RegistrarOrgaoDTO {
     private String email;
     private String senha;
