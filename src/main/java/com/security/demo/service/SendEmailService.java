@@ -2,7 +2,7 @@ package com.security.demo.service;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
-import org.springframework.mail.SimpleMailMessage;
+import lombok.AllArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -11,13 +11,10 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 @Service
+@AllArgsConstructor
 public class SendEmailService {
 
     private final JavaMailSender javaMailSender;
-
-    public SendEmailService(JavaMailSender javaMailSender) {
-        this.javaMailSender = javaMailSender;
-    }
 
     public void enviarEmailResetSenha(String email, String codigo) throws MessagingException {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -28,7 +25,6 @@ public class SendEmailService {
         helper.setText(gerarEmail("Reset de senha", "Seu código de reset de senha é: " + codigo), true);
         javaMailSender.send(mimeMessage);
     }
-
 
     public String gerarEmail(String titulo, String mensagem) {
 

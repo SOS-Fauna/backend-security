@@ -8,12 +8,14 @@ import com.security.demo.repository.OngRepository;
 import com.security.demo.repository.ResetSenhaRepositoryOng;
 import com.security.demo.repository.ResetSenhaRepositoryUser;
 import com.security.demo.repository.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
+@AllArgsConstructor
 public class ResetSenhaService {
 
     private final UserRepository userRepository;
@@ -21,18 +23,6 @@ public class ResetSenhaService {
     private final ResetSenhaRepositoryUser resetSenhaRepositoryUser;
     private final ResetSenhaRepositoryOng resetSenhaRepositoryOng;
     private final PasswordEncoder passwordEncoder;
-
-    public ResetSenhaService(UserRepository userRepository,
-                             OngRepository ongRepository,
-                             ResetSenhaRepositoryUser resetSenhaRepositoryUser,
-                             ResetSenhaRepositoryOng resetSenhaRepositoryOng,
-                             PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.ongRepository = ongRepository;
-        this.resetSenhaRepositoryUser = resetSenhaRepositoryUser;
-        this.resetSenhaRepositoryOng = resetSenhaRepositoryOng;
-        this.passwordEncoder = passwordEncoder;
-    }
 
     public void resetSenhaUser(String codigo, String novaSenha) {
         ResetSenhaUser resetSenhaUser = resetSenhaRepositoryUser.findByCodigoUser(codigo).orElse(null);

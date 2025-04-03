@@ -10,6 +10,7 @@ import com.security.demo.repository.ResetSenhaRepositoryOng;
 import com.security.demo.repository.ResetSenhaRepositoryUser;
 import com.security.demo.repository.UserRepository;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,6 +18,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class RequestSenhaService {
 
     private final UserRepository userRepository;
@@ -24,18 +26,6 @@ public class RequestSenhaService {
     private final ResetSenhaRepositoryUser resetSenhaRepositoryUser;
     private final ResetSenhaRepositoryOng resetSenhaRepositoryOng;
     private final SendEmailService sendEmailService;
-
-    public RequestSenhaService(UserRepository userRepository,
-                               OngRepository ongRepository,
-                               ResetSenhaRepositoryUser resetSenhaRepositoryUser,
-                               ResetSenhaRepositoryOng resetSenhaRepositoryOng,
-                               SendEmailService sendEmailService) {
-        this.userRepository = userRepository;
-        this.ongRepository = ongRepository;
-        this.resetSenhaRepositoryUser = resetSenhaRepositoryUser;
-        this.resetSenhaRepositoryOng = resetSenhaRepositoryOng;
-        this.sendEmailService = sendEmailService;
-    }
 
     @Transactional
     public void solicitarResetSenhaUser(EmailDTO email) {
