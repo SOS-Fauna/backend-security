@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Email;
 @Entity
 @Table(name = "orgaos_login")
 public class Ong {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")

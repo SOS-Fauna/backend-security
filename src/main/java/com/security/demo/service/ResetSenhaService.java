@@ -8,12 +8,10 @@ import com.security.demo.repository.OngRepository;
 import com.security.demo.repository.ResetSenhaRepositoryOng;
 import com.security.demo.repository.ResetSenhaRepositoryUser;
 import com.security.demo.repository.UserRepository;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Service
 public class ResetSenhaService {
@@ -24,7 +22,11 @@ public class ResetSenhaService {
     private final ResetSenhaRepositoryOng resetSenhaRepositoryOng;
     private final PasswordEncoder passwordEncoder;
 
-    public ResetSenhaService(UserRepository userRepository, OngRepository ongRepository, ResetSenhaRepositoryUser resetSenhaRepositoryUser, ResetSenhaRepositoryOng resetSenhaRepositoryOng, PasswordEncoder passwordEncoder, JavaMailSender javaMailSender) {
+    public ResetSenhaService(UserRepository userRepository,
+                             OngRepository ongRepository,
+                             ResetSenhaRepositoryUser resetSenhaRepositoryUser,
+                             ResetSenhaRepositoryOng resetSenhaRepositoryOng,
+                             PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.ongRepository = ongRepository;
         this.resetSenhaRepositoryUser = resetSenhaRepositoryUser;

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #0055A5; }
+        .conteudo { margin-top: 20px; }
+    </style>
+</head>
+<body>
+<h1 th:text="${titulo}">Título</h1>
+<div class="conteudo" th:text="${mensagem}">Mensagem padrão</div>
+</body>
+</html>

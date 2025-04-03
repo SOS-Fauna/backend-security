@@ -1,16 +1,13 @@
 package com.security.demo.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reset_senha_orgao")
 public class ResetSenhaOng {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

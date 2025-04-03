@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "reset_senha_usuario")
 public class ResetSenhaUser {
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
