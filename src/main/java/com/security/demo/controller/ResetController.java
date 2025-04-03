@@ -4,7 +4,7 @@ import com.security.demo.model.dto.EmailDTO;
 import com.security.demo.model.dto.ResetSenhaDTO;
 import com.security.demo.service.RequestSenhaService;
 import com.security.demo.service.ResetSenhaService;
-import com.security.demo.service.SendEmailService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,15 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/reset")
+@AllArgsConstructor
 public class ResetController {
 
     private final ResetSenhaService resetSenhaService;
     private final RequestSenhaService requestSenhaService;
-
-    public ResetController(ResetSenhaService resetSenhaService, RequestSenhaService requestSenhaService, SendEmailService sendEmailService) {
-        this.resetSenhaService = resetSenhaService;
-        this.requestSenhaService = requestSenhaService;
-    }
 
     @PostMapping("/solicitar/user")
     public String solicitarResetSenhaUser(@RequestBody EmailDTO emailDTO) {

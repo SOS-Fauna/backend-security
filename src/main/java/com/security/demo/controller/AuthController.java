@@ -3,16 +3,16 @@ package com.security.demo.controller;
 import com.security.demo.model.dto.*;
 import com.security.demo.service.AuthService;
 import com.security.demo.service.RegisterService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
+@AllArgsConstructor
 public class AuthController {
 
-    @Autowired
     private AuthService authService;
-    @Autowired
     private RegisterService registerService;
 
     @PostMapping("/register/user")
