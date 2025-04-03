@@ -40,7 +40,6 @@ public class SendEmailService {
         TemplateEngine templateEngine = new TemplateEngine();
         templateEngine.setTemplateResolver(resolver);
 
-        // Preenche os dados no template
         Context context = new Context();
         context.setVariable("titulo", titulo);
         context.setVariable("mensagem", mensagem);

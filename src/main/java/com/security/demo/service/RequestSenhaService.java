@@ -10,7 +10,6 @@ import com.security.demo.repository.ResetSenhaRepositoryOng;
 import com.security.demo.repository.ResetSenhaRepositoryUser;
 import com.security.demo.repository.UserRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -26,7 +25,11 @@ public class RequestSenhaService {
     private final ResetSenhaRepositoryOng resetSenhaRepositoryOng;
     private final SendEmailService sendEmailService;
 
-    public RequestSenhaService(UserRepository userRepository, OngRepository ongRepository, ResetSenhaRepositoryUser resetSenhaRepositoryUser, ResetSenhaRepositoryOng resetSenhaRepositoryOng, JavaMailSender javaMailSender, SendEmailService sendEmailService) {
+    public RequestSenhaService(UserRepository userRepository,
+                               OngRepository ongRepository,
+                               ResetSenhaRepositoryUser resetSenhaRepositoryUser,
+                               ResetSenhaRepositoryOng resetSenhaRepositoryOng,
+                               SendEmailService sendEmailService) {
         this.userRepository = userRepository;
         this.ongRepository = ongRepository;
         this.resetSenhaRepositoryUser = resetSenhaRepositoryUser;
