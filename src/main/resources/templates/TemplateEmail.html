@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #0055A5;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .conteudo {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        p {
+            margin: 20px 0 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container" th:fragment="header">
+    <img src="https://i.postimg.cc/pLNwCGK0/Texto-do-seu-par-grafo.png" alt="logo">
+    <h1 th:text="${titulo}">SOS Fauna</h1>
+    <p>Seu código de recuperação é:</p>
+    <div class="conteudo" th:text="${mensagem}">Mensagem padrão</div>
+</div>
+</body>
+</html>
