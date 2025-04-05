@@ -78,6 +78,6 @@ Esta API possui algumas funções e implementações cujo quais são
 
 ## Contato
 
-* Informações de contato para dúvidas ou sugestões. Por exemplo:
+* Informações de contato para dúvidas ou sugestões:
 
     Se você tiver alguma dúvida ou sugestão, entre em contato comigo no [Meu perfil do LinkedIn](https://www.linkedin.com/in/tallys-labanca/).
