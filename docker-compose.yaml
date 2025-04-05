@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sosfauna
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 20s
+
+  app:
+    image: openjdk:21
+    container_name: api
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/sosfauna-security-0.0.1-SNAPSHOT.jar:/app/app.jar
+    working_dir: /app
+    command: ["sh", "-c", "java -jar app.jar"]
+
+volumes:
+  mysql_data:

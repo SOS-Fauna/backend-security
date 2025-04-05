@@ -21,8 +21,8 @@ public class SendEmailService {
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 
         helper.setTo(email);
-        helper.setSubject("Seu Relatório HTML");
-        helper.setText(gerarEmail("Reset de senha", "Seu código de reset de senha é: " + codigo), true);
+        helper.setSubject("SOS Fauna - Reset de senha");
+        helper.setText(gerarEmail("SOS Fauna", codigo), true);
         javaMailSender.send(mimeMessage);
     }
 
