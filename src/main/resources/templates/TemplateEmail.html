@@ -1,40 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: #0055A5;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .conteudo {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 20px 0;
-            text-align: center;
-        }
-        p {
-            margin: 20px 0 10px;
-            text-align: center;
-        }
-    </style>
+    <title>SOS Fauna</title>
 </head>
-<body>
-<div class="container" th:fragment="header">
-    <img src="https://i.postimg.cc/pLNwCGK0/Texto-do-seu-par-grafo.png" alt="logo">
-    <h1 th:text="${titulo}">SOS Fauna</h1>
-    <p>Seu código de recuperação é:</p>
-    <div class="conteudo" th:text="${mensagem}">Mensagem padrão</div>
+<body style="text-align: center; font-family: Arial, sans-serif; padding: 20px; margin: 0;">
+<div style="max-width: 600px; margin: 0 auto;">
+    <img src="https://i.ibb.co/bMr358R3/Texto-do-seu-par-grafo.png" alt="Cabeçalho"
+         style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <h1 style="margin-top: 20px; color: #2c3e50;" th:text="${titulo}">SOS Fauna</h1>
+    <p style="font-size: 18px; color: #333;">Seu código de recuperação de senha:</p>
+    <p><strong style="font-size: 20px; color: #e74c3c;" th:text="${mensagem}"></strong></p>
 </div>
 </body>
 </html>
