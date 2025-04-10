@@ -38,7 +38,7 @@ Esta API possui algumas funções e implementações cujo quais são
 
 1.  Inicie o servidor:
 
-    * Basta inicia-la em sua IDE de desenvolvimento e ter o SQL ligado a mesma.
+    * Basta iniciá-la em sua IDE de desenvolvimento e ter o SQL ligado a mesma.
 
 2.  A API estará disponível em `http://localhost:8080` (ou a porta configurada).
 
@@ -49,7 +49,7 @@ Esta API possui algumas funções e implementações cujo quais são
   ### Login e Registro
 
     * `POST /auth/register/user`: Registra um novo usuário.
-    *  `POST /auth/register/ong`: Registra uma nova ONG.
+    * `POST /auth/register/ong`: Registra uma nova ONG.
     * `POST /auth/login/user`: Autentica um usuário e retorna um token JWT.
     * `POST /auth/login/ong`: Autentica uma ONG e retorna um token JWT.
 
@@ -65,6 +65,7 @@ Esta API possui algumas funções e implementações cujo quais são
 * Instruções sobre como executar os testes da API. Por exemplo:
 
     * Basta ir até o navegador, ou em ferramentas de testes de API (Como Insomnia ou Postman) e utilizar dos endpoints listados, alterando o Corpo de cada requisição.
+    * Também pode visualizá-la no [Swagger](http://localhost:8080/swagger-ui/index.html#/)
 
 ## Contribuição
 
